@@ -14,8 +14,6 @@ except:
 cur.execute('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TEXT, path TEXT);')
 cur.execute('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);')
 
-docpath = 'dnd.docset/Contents/Resources/Documents'
-
 for page in glob.glob('dnd.docset/Contents/Resources/Documents/*.html'):
     soup = BeautifulSoup(open(page).read())
     name = soup.find(class_="topicLineFirst").text

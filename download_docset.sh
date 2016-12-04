@@ -7,7 +7,6 @@ wget --mirror $URL \
     --directory-prefix=dnd.docset/Contents/Resources/Documents
 
 function download_tree_gif() {
-    echo $1
     wget "$URL/Res/tree/$1" -O dnd.docset/Contents/Resources/Documents/Res/tree/$1
 }
 
