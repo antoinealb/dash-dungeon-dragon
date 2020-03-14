@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-URL=http://www.regles-donjons-dragons.com
+URL=https://regles-donjons-dragons.com/
 
 wget --mirror $URL \
     --no-host-directories \
