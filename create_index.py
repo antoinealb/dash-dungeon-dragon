@@ -15,7 +15,7 @@ cur.execute('CREATE TABLE searchIndex(id INTEGER PRIMARY KEY, name TEXT, type TE
 cur.execute('CREATE UNIQUE INDEX anchor ON searchIndex (name, type, path);')
 
 for page in glob.glob('dnd.docset/Contents/Resources/Documents/*.html'):
-    soup = BeautifulSoup(open(page).read())
+    soup = BeautifulSoup(open(page).read(), features="html.parser")
     name = soup.find(class_="topicLineFirst").text
     path = os.path.basename(page)
     print("name: {} path: {}".format(name, path))
